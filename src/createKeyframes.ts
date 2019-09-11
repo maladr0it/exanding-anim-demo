@@ -3,7 +3,7 @@ interface Dims {
   width: number;
 }
 
-const NUM_STEPS = 100;
+const NUM_STEPS = 60;
 
 export const createKeyframes = (collapsedDims: Dims, expandedDims: Dims) => {
   const expandedWidthRatio = expandedDims.width / collapsedDims.width;
