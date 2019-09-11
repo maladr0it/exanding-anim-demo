@@ -10,9 +10,9 @@
   position: relative;
   height: var(--button-height);
   width: var(--button-width);
-  /* overflow: hidden; */
   transform-origin: top left;
-  outline: 1px solid red;
+  overflow: hidden;
+  /* outline: 1px solid red; */
 }
 
 .Expander-content {
@@ -22,7 +22,7 @@
   background: black;
   color: white;
   font-weight: bold;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 .Expander-toggleButton {
