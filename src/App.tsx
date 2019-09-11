@@ -42,12 +42,12 @@ const App: React.FC = () => {
       inverseKeyframesRef.current
     ) {
       containerRef.current.animate(keyframesRef.current, {
-        duration: 150,
+        duration: 1000,
         fill: "forwards",
         direction: open ? "normal" : "reverse"
       });
       contentRef.current.animate(inverseKeyframesRef.current, {
-        duration: 150,
+        duration: 1000,
         fill: "forwards",
         direction: open ? "normal" : "reverse"
       });
