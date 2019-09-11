@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
 import { lorem } from "./lorem";
-import { createKeyframes } from "./createKeyframes";
 import { ReactComponent as DownSvg } from "./assets/angle-down-solid.svg";
 import { ReactComponent as UpSvg } from "./assets/angle-up-solid.svg";
 
@@ -24,12 +23,27 @@ const App: React.FC = () => {
     if (containerRef.current && contentRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const contentRect = contentRef.current.getBoundingClientRect();
-      const { keyframes, inverseKeyframes } = createKeyframes(
-        containerRect,
-        contentRect
-      );
-      keyframesRef.current = keyframes;
-      inverseKeyframesRef.current = inverseKeyframes;
+
+      const xScale = contentRect.width / containerRect.width;
+      const yScale = contentRect.height / containerRect.height;
+
+      keyframesRef.current = [
+        {
+          transform: `scale(1,1)`
+        },
+        {
+          transform: `scale(${xScale}, ${yScale})`
+        }
+      ];
+
+      inverseKeyframesRef.current = [
+        {
+          transform: `scale(1, 1)`
+        },
+        {
+          transform: `scale(${1 / xScale},${1 / yScale})`
+        }
+      ];
     }
   }, []);
 
@@ -42,17 +56,17 @@ const App: React.FC = () => {
       inverseKeyframesRef.current
     ) {
       containerRef.current.animate(keyframesRef.current, {
-        duration: 150,
+        duration: 1000,
         fill: "forwards",
         direction: open ? "normal" : "reverse"
       });
+
       contentRef.current.animate(inverseKeyframesRef.current, {
-        duration: 150,
+        duration: 1000,
         fill: "forwards",
         direction: open ? "normal" : "reverse"
       });
     }
-
     touchedRef.current = true;
   }, [open]);
 
