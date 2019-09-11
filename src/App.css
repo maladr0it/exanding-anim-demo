@@ -10,13 +10,11 @@
   position: relative;
   height: var(--button-height);
   width: var(--button-width);
-  /* overflow: hidden; */
-  outline: 1px solid red;
+  overflow: hidden;
   transform-origin: top left;
 }
 
 .Expander-content {
-  z-index: -1;
   position: absolute;
   width: 20rem;
   transform-origin: top left;

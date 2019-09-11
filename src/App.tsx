@@ -12,7 +12,7 @@ const App: React.FC = () => {
   const inverseKeyframesRef = useRef<Keyframe[] | null>(null);
   const touchedRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLParagraphElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const [open, setOpen] = useState(false);
 
@@ -52,6 +52,7 @@ const App: React.FC = () => {
         direction: open ? "normal" : "reverse"
       });
     }
+
     touchedRef.current = true;
   }, [open]);
 

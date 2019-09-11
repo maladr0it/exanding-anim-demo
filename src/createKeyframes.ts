@@ -12,7 +12,6 @@ export const createKeyframes = (collapsedDims: Dims, expandedDims: Dims) => {
   const expandedWidthRatio = expandedDims.width / collapsedDims.width;
   const expandedHeightRatio = expandedDims.height / collapsedDims.height;
 
-  // use 100 steps for most accuracy
   for (let step = 0; step <= NUM_STEPS; step++) {
     const progress = step / NUM_STEPS;
 
