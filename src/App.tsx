@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 import { lorem } from "./lorem";
 import { ReactComponent as DownSvg } from "./assets/angle-down-solid.svg";
